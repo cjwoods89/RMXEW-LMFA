@@ -1,0 +1,29 @@
+.dashboard-topic {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin: 0 5px 5px 0;
+    text-align: center;
+}
+
+.dashboard-topic .dashboard-topic-icon {
+    color: #fff;
+    font-size: 7.5rem;
+}
+
+.dashboard-topic .title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.dashboard-topic .content {
+    color: #fff;
+    font-size: 1rem;
+}

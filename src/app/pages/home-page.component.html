@@ -1,52 +1,146 @@
+<div class="row background-white">
 
-<!--<div *ngIf="!(isLoggedIn|async)">-->
-    <!--<div class="col-md-6">-->
-        <!--<p>You need to <a (click)="navigateToLogin($event)" href="#">Log In</a> or <a (click)="navigateToRegister($event)" href="#">Register</a></p>-->
-    <!--</div>-->
-<!--</div>-->
+    <div class="col-lg-8">
+        <div id="map">
+            <agm-map
+                [latitude]="lat"
+                [longitude]="lng"
+                [zoom]="zoom"
+                [disableDefaultUI]=false
+                [zoomControl]=true
+                [fullscreenControl]=true
+                [mapTypeControl]=true
+                [scrollwheel]=false
+                (mapClick)="onChoseLocation($event)"
+            >
 
-<!--<div class="container">-->
+                <agm-marker [latitude]="lat" [longitude]="lng" *ngIf="locationChosen">
 
-    <!--<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)">-->
-        <!--<agm-marker-->
-            <!--[latitude]="lat"-->
-            <!--[longitude]="lng"-->
-            <!--*ngIf="locationChosen">-->
-            <!--<agm-info-window>Dummy Data</agm-info-window>-->
-        <!--</agm-marker>-->
-    <!--</agm-map>-->
+                    <agm-info-window>
+                        <strong>Dummy Alert</strong>
+                        <br />Alert Type:
+                        <hr>Description:
+                    </agm-info-window>
 
-<!--</div>-->
+                </agm-marker>
 
-<div>
-    This is the alert type we have: {{alertType1}}
-</div>
+            </agm-map>
+        </div>
+    </div>
 
-<div id="map">
-    <agm-map
-        [latitude]="lat"
-        [longitude]="lng"
-        [zoom]="zoom"
-        [disableDefaultUI]=false
-        [zoomControl]=true
-        [fullscreenControl]=true
-        [mapTypeControl]=true
-        [scrollwheel]=false
-        (mapClick)="onChoseLocation($event)"
-    >
 
-    <agm-marker
-        [latitude]="lat"
-        [longitude]="lng"
-        *ngIf="locationChosen">
-
-        <agm-info-window>
-            <strong>Dummy Alert</strong>
-            <br />Alert Type:
-            <hr>Description:
-        </agm-info-window>
-
-    </agm-marker>
-
-    </agm-map>
+    <div class="col-lg-4">
+        <div id="alerts-container">
+            <ul id="weather-alerts">
+                <li>
+                    <div class="icon background-red">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-green">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-yellow">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-blue">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-red">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-green">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-yellow">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-blue">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-red">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-green">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-yellow">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon background-blue">
+                        <i class="weather-icon fas fa-fire"></i>
+                    </div>
+                    <div class="text-content">
+                        <div class="title">Fire Alert</div>
+                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
