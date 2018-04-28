@@ -26,8 +26,8 @@ export class HomePageComponent {
     errorMessage: any;
     alerts: any;
     alertsArray: [];
-    city: string = 'Indianapolis';
-    state: string = 'IN';
+    city: string;
+    state: string;
     wuEndpoint: string = 'alerts/q/';
 
     // ReverseGeocoder API
@@ -60,7 +60,7 @@ export class HomePageComponent {
         this.lat = event.coords.lat;
         this.lng = event.coords.lng;
         this.locationChosen = true;
-        this.zoom = 6;
+        this.zoom = 5;
         this.getGeocode();
         this.getAlerts();
     }

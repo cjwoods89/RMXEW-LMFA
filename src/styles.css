@@ -9,6 +9,15 @@
     font-size: 14px;
 }
 
+.display-1,
+.display-2,
+.display-3,
+.display-4{
+    font-family: 'Open Sans',    sans-serif;
+    font-weight: 300;
+}
+
+
 svg>path {
     color: inherit;
     background-color: inherit;
@@ -83,8 +92,7 @@ body {
 }
 
 #main-nav ul li a:hover {
-    background-color: #1D4E89;
-    color: #fff;
+    color: #5D9CEC;
     text-decoration: none;
 }
 
@@ -151,7 +159,7 @@ body {
     text-align: right;
     width: 100%;
     padding: 10px 20px;
-    color: #1D4E89;
+    color: #5D9CEC;
 }
 
 #side-nav-container section ul li:not(:last-child) a {
@@ -160,9 +168,9 @@ body {
 
 #side-nav-container section ul li a:focus,
 #side-nav-container section ul li a:hover {
-    background-color: #1D4E89;
+    background-color: #5D9CEC;
     color: #fff;
-    border-color: #1D4E89;
+    border-color: #5D9CEC;
 }
 
 #side-nav-container section ul li a:hover {
@@ -172,7 +180,7 @@ body {
 #content-area {
     display: flex;
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 #main-nav-search-form {
@@ -191,7 +199,7 @@ body {
 }
 
 #main-nav-search-form input:focus {
-    border-color: #1D4E89;
+    border-color: #5D9CEC;
     background-color: #edf4fb;
 }
 
@@ -199,7 +207,7 @@ body {
     display: flex;
     align-items: center;
     border: none;
-    background-color: #1D4E89;
+    background-color: #5D9CEC;
     color: #fff;
     padding: 0 30px;
     cursor: pointer;
@@ -207,7 +215,7 @@ body {
 
 #main-nav-search-form button:focus,
 #main-nav-search-form button:hover {
-    background-color: #296ec1;
+    background-color: #4A89DC;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -266,18 +274,41 @@ body {
 .background-white {
     background-color: #fff;
 }
+.background-grey {
+    background-color: #E6E9ED;
+}
+
 .background-red {
     background-color: #E9573F;
 }
 
 .background-green {
-    background-color: #8CC152;
+    background-color: #4CAF50;
 }
 
 .background-blue {
-    background-color: #3BAFDA;
+    background-color: #3F51B5;
 }
 
 .background-yellow {
     background-color: #F6BB42;
+}
+.background-info{
+    background-color: #58C1BE;
+
+}
+
+
+.marginBottom20px {
+    margin-bottom: 20px;
+}
+.marginBottom50px {
+    margin-bottom: 50px;
+}
+.padding20px{
+    padding: 20px;
+}
+
+.addBoxShadow{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.0.1)
 }

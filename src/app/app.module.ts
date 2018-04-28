@@ -24,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import {WundergroundService} from "app/shared/wunderground.service";
 import {ReverseGeocoderService} from "app/shared/reverse-geocoder.service";
+import { AboutusPageComponent } from './pages/aboutus-page.component';
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
     { path: 'reset-password', component: ResetPasswordComponent },
     { path: 'login', component: LoginPageComponent },
     { path: 'dashboard', component: DashboardPageComponent, canActivate: [LoggedInGuard] },
-    { path: '', component: HomePageComponent }
+    { path: '', component: HomePageComponent },
+    { path: 'aboutus', component: AboutusPageComponent }
 ];
 
 @NgModule({
@@ -47,7 +49,8 @@ const routes: Routes = [
         RegisterPageComponent,
         AllInOnePageComponent,
         LoginPageComponent,
-        DashboardPageComponent
+        DashboardPageComponent,
+        AboutusPageComponent
     ],
     imports: [
         BrowserModule,

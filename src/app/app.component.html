@@ -23,6 +23,9 @@
             <a [routerLink]="['dashboard']" *ngIf="(isLoggedIn|async)">Dashboard</a>
         </li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="['aboutus']" *ngIf="(isLoggedIn|async)">About Us</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a [routerLink]="['all-in-one']" *ngIf="!(isLoggedIn|async)">All In One</a>
         </li>
 
@@ -58,6 +61,9 @@
                     </li>
                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <a [routerLink]="['dashboard']" *ngIf="(isLoggedIn|async)">Dashboard</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a [routerLink]="['aboutus']" *ngIf="(isLoggedIn|async)">About Us</a>
                     </li>
                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <a [routerLink]="['all-in-one']" *ngIf="!(isLoggedIn|async)">All In One</a>
