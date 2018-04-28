@@ -1,1 +1,259 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    -o-transition: all .2s ease-in-out !important;
+    -webkit-transition: all .2s ease-in-out !important;
+    box-sizing: border-box !important;
+    font-family: 'Roboto Slab', serif;
+    outline: none !important;
+    transition: all .2s ease-in-out !important;
+    color: #555;
+    font-size: 14px;
+}
+
+svg>path {
+    color: inherit;
+    background-color: inherit;
+}
+
+body {
+    background-color: #EEE;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-nav {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#site-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    margin-left: 10px;
+}
+
+#side-nav-toggle {
+    display: flex;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#side-nav-toggle:hover {
+    background-color: #eee;
+}
+
+#site-logo a {
+    display: flex;
+}
+
+#site-logo a img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+#main-nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+#main-nav ul li {
+    display: flex;
+}
+
+#main-nav ul li a {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px 20px;
+}
+
+#main-nav ul li a:hover {
+    background-color: #1D4E89;
+    color: #fff;
+    text-decoration: none;
+}
+
+#main-container {
+    display: flex;
+    /* background-color: #f45; */
+    width: 100%;
+    height: 100%;
+}
+
+#side-nav {
+    position: absolute;
+    width: 20%;
+    height: calc(100% - 70px);
+    background-color: #fff;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    z-index: 10000;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+#side-nav[data-is-visible="false"][data-is-initial-load] {
+    visibility: hidden;
+}
+
+#side-nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+}
+
+#side-nav-container section {
+    padding: 5px 0px;
+}
+
+#side-nav-container section .side-nav-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+#side-nav-container section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#side-nav-container section ul li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+}
+
+#side-nav-container section ul li a {
+    text-align: right;
+    width: 100%;
+    padding: 10px 20px;
+    color: #1D4E89;
+}
+
+#side-nav-container section ul li:not(:last-child) a {
+    border-bottom: 1px solid #eee;
+}
+
+#side-nav-container section ul li a:focus,
+#side-nav-container section ul li a:hover {
+    background-color: #1D4E89;
+    color: #fff;
+    border-color: #1D4E89;
+}
+
+#side-nav-container section ul li a:hover {
+    text-decoration: none;
+}
+
+#content-area {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+#main-nav-search-form {
+    display: flex;
+    width: 40%;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+}
+
+#main-nav-search-form input {
+    display: flex;
+    border: 1px solid #ccc;
+    border-right: none;
+    flex-grow: 2;
+    padding: 5px 20px;
+}
+
+#main-nav-search-form input:focus {
+    border-color: #1D4E89;
+    background-color: #edf4fb;
+}
+
+#main-nav-search-form button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #1D4E89;
+    color: #fff;
+    padding: 0 30px;
+    cursor: pointer;
+}
+
+#main-nav-search-form button:focus,
+#main-nav-search-form button:hover {
+    background-color: #296ec1;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (max-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (max-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+    #site-logo {
+        margin-bottom: 10px;
+    }
+    #main-nav {
+        height: auto;
+        flex-direction: column;
+    }
+    #side-nav {
+        width: 100%;
+        padding-bottom: 50px;
+        height: auto;
+    }
+    #main-nav-search-form {
+        width: 90%;
+    }
+    #side-nav-container section .side-nav-section-title,
+    #side-nav-container section ul li a {
+        text-align: center;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1200px) {}
+
+/* 
+    text colors
+*/
+
+.text-color-white {
+    color: #fff;
+}
