@@ -1,8 +1,19 @@
-<div *ngIf="isLoggedIn|async">
-    <app-display-user></app-display-user>
-</div>
+
 <div *ngIf="!(isLoggedIn|async)">
     <div class="col-md-6">
         <p>You need to <a (click)="navigateToLogin($event)" href="#">Log In</a> or <a (click)="navigateToRegister($event)" href="#">Register</a></p>
     </div>
+</div>
+
+<div class="container">
+
+    <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)">
+        <agm-marker
+            [latitude]="lat"
+            [longitude]="lng"
+            *ngIf="locationChosen">
+            <agm-info-window>Dummy Data</agm-info-window>
+        </agm-marker>
+    </agm-map>
+
 </div>
