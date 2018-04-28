@@ -9,6 +9,15 @@
     font-size: 14px;
 }
 
+.display-1,
+.display-2,
+.display-3,
+.display-4{
+    font-family: 'Open Sans',    sans-serif;
+    font-weight: 300;
+}
+
+
 svg>path {
     color: inherit;
     background-color: inherit;
@@ -171,7 +180,7 @@ body {
 #content-area {
     display: flex;
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 #main-nav-search-form {
@@ -265,6 +274,10 @@ body {
 .background-white {
     background-color: #fff;
 }
+.background-grey {
+    background-color: #E6E9ED;
+}
+
 .background-red {
     background-color: #E9573F;
 }
@@ -283,4 +296,19 @@ body {
 .background-info{
     background-color: #58C1BE;
 
+}
+
+
+.marginBottom20px {
+    margin-bottom: 20px;
+}
+.marginBottom50px {
+    margin-bottom: 50px;
+}
+.padding20px{
+    padding: 20px;
+}
+
+.addBoxShadow{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.0.1)
 }
