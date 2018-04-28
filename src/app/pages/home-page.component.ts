@@ -4,6 +4,8 @@ import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import {Router} from "@angular/router";
 import { UserInfo } from "app/shared/user-info";
+import {WundergroundService} from "app/shared/wunderground.service";
+import {ReverseGeocoderService} from "app/shared/reverse-geocoder.service";
 
 @Component({
     selector: 'app-home-page',
@@ -20,12 +22,29 @@ export class HomePageComponent {
     zoom: number = 4;
     locationChosen = false;
 
-    constructor(private authService: AuthService, private router: Router) {
-        this.userInfo = authService.userInfo;
-        this.userInfo
-            .map(userInfo => !userInfo.isAnonymous)
-            .subscribe(this.isLoggedIn);
-    }
+    // WUnderground API
+    errorMessage: string;
+    alerts: any;
+    defaultCity: string = 'Indianapolis';
+    defaultState: string = 'IN';
+    endpoint: string = 'alerts/q/';
+
+    // ReverseGeocoder API
+    geocode: any;
+
+    alertType1: string = "Testing";
+
+    constructor(
+        private authService: AuthService,
+        private router: Router,
+        private wuService: WundergroundService,
+        private geocode: ReverseGeocoderService)
+        {
+            this.userInfo = authService.userInfo;
+            this.userInfo
+                .map(userInfo => !userInfo.isAnonymous)
+                .subscribe(this.isLoggedIn);
+        }
 
     navigateToLogin(e) {
         this.router.navigate(['/login']);
@@ -42,5 +61,39 @@ export class HomePageComponent {
         this.lng = event.coords.lng;
         this.locationChosen = true;
         this.zoom = 6;
+        console.log(event);
+        this.getAlerts();
+        this.getGeocode();
     }
+
+    getGeocode(){
+        this.geocode.getCityState(this.lat, this.lng)
+        .subscribe(
+            geocode => {
+              this.geocode = geocode;
+              console.log(this.geocode)
+            },
+            error =>  {
+              this.errorMessage = <any>error;
+              console.log(this.errorMessage)
+            }
+        );
+    }
+
+    getAlerts(){
+        let endpoint = this.endpoint + this.defaultState + '/' +this.defaultCity
+        console.log(endpoint)
+        this.wuService.getAlerts(endpoint)
+        .subscribe(
+            alerts => {
+              this.alerts = alerts;
+              console.log(this.alerts)
+            },
+            error =>  {
+              this.errorMessage = <any>error;
+              console.log(this.errorMessage)
+            }
+        );
+    }
+
 }
