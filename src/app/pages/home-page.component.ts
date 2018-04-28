@@ -23,14 +23,15 @@ export class HomePageComponent {
     locationChosen = false;
 
     // WUnderground API
-    errorMessage: string;
+    errorMessage: any;
     alerts: any;
-    defaultCity: string = 'Indianapolis';
-    defaultState: string = 'IN';
-    endpoint: string = 'alerts/q/';
+    city: string = 'Indianapolis';
+    state: string = 'IN';
+    wuEndpoint: string = 'alerts/q/';
 
     // ReverseGeocoder API
-    geocode: any;
+    geocodeInfo: any;
+    geoEndpoint: string = 'geolookup/q/';
 
     alertType1: string = "Testing";
 
@@ -62,16 +63,19 @@ export class HomePageComponent {
         this.locationChosen = true;
         this.zoom = 6;
         console.log(event);
-        this.getAlerts();
         this.getGeocode();
+        this.getAlerts();
     }
 
     getGeocode(){
-        this.geocode.getCityState(this.lat, this.lng)
+        let endpoint = this.geoEndpoint + this.lat + ',' + this.lng
+        console.log(endpoint)
+        this.wuService.getGeoLocation(endpoint)
         .subscribe(
-            geocode => {
-              this.geocode = geocode;
-              console.log(this.geocode)
+            geocodeInfo => {
+              this.geocodeInfo = geocodeInfo;
+              this.state = this.geocodeInfo.location.state;
+              this.city = this.geocodeInfo.location.city;
             },
             error =>  {
               this.errorMessage = <any>error;
@@ -81,7 +85,7 @@ export class HomePageComponent {
     }
 
     getAlerts(){
-        let endpoint = this.endpoint + this.defaultState + '/' +this.defaultCity
+        let endpoint = this.wuEndpoint + this.state + '/' +this.city
         console.log(endpoint)
         this.wuService.getAlerts(endpoint)
         .subscribe(

@@ -22,6 +22,14 @@ export class WundergroundService {
           .catch(this.handleError);
     }
 
+    getGeoLocation(endpoint:string): Observable<any[]> {
+        let apiUrl = `${this.baseUrl}${this.publicKey}${endpoint}.json`;
+        console.log(apiUrl);
+        return this.http.get(apiUrl)
+          .map(this.extractData)   // "maps" the success- show the results
+          .catch(this.handleError);
+    }
+
     private extractData(res: Response) {
         let results = res.json();
         return results || [];

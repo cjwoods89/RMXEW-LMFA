@@ -16,7 +16,7 @@ export class ReverseGeocoderService {
 
   constructor(private http: Http) { }
 
-    getCityState(lat:string, lng:string): Observable<any[]> {
+    getCityState(lat:number, lng:number): Observable<any[]> {
         let apiUrl = `${this.baseUrl}${this.latEntry}${lat}${this.lngEntry}${lng}${this.endUrl}`;
         console.log(apiUrl);
         return this.http.get(apiUrl)
