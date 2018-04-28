@@ -4,6 +4,7 @@ import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import {Router} from "@angular/router";
 import { UserInfo } from "app/shared/user-info";
+import { AlertInfo } from "app/shared/alert-info";
 import {WundergroundService} from "app/shared/wunderground.service";
 import {ReverseGeocoderService} from "app/shared/reverse-geocoder.service";
 
@@ -14,6 +15,7 @@ import {ReverseGeocoderService} from "app/shared/reverse-geocoder.service";
 })
 export class HomePageComponent {
     userInfo: Observable<UserInfo>;
+    alertInfo: Observable<AlertInfo>;
     isLoggedIn = new BehaviorSubject(false);
 
     // Start Position
@@ -25,7 +27,7 @@ export class HomePageComponent {
     // WUnderground API
     errorMessage: any;
     alerts: any;
-    alertsArray: [];
+    alertsArray: any;
     city: string;
     state: string;
     wuEndpoint: string = 'alerts/q/';
@@ -89,8 +91,8 @@ export class HomePageComponent {
         .subscribe(
             alerts => {
               this.alerts = alerts;
-              this.alertsArray = alerts.alerts;
-              console.log(this.alertsArray);
+              this.alertsArray = this.alerts.alerts;
+              console.log(this.alertsArray)
             },
             error =>  {
               this.errorMessage = <any>error;
