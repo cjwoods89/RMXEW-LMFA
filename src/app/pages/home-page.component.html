@@ -27,120 +27,30 @@
             </agm-map>
         </div>
     </div>
-
-
+    
     <div class="col-lg-4">
         <div id="alerts-container">
             <ul id="weather-alerts">
-                <li>
-                    <div class="icon background-red">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-green">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-yellow">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-blue">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-red">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-green">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-yellow">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-blue">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-red">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-green">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-yellow">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon background-blue">
-                        <i class="weather-icon fas fa-fire"></i>
-                    </div>
-                    <div class="text-content">
-                        <div class="title">Fire Alert</div>
-                        <div class="small-desc">There's possible 80% chance of wild fire around Frankling county.</div>
-                    </div>
-                </li>
+
+                <div *ngFor="let alert of alertsArray">
+
+                    <li>
+
+                        <div class="icon background-red">
+                            <i class="weather-icon fas fa-fire"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                </div>
+
             </ul>
         </div>
     </div>
+
 </div>
