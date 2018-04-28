@@ -28,8 +28,8 @@ export class HomePageComponent {
     errorMessage: any;
     alerts: any;
     alertsArray: any;
-    city: string = 'Indianapolis';
-    state: string = 'IN';
+    city: string;
+    state: string;
     wuEndpoint: string = 'alerts/q/';
 
     // ReverseGeocoder API
@@ -62,15 +62,13 @@ export class HomePageComponent {
         this.lat = event.coords.lat;
         this.lng = event.coords.lng;
         this.locationChosen = true;
-        this.zoom = 6;
-        console.log(event);
+        this.zoom = 5;
         this.getGeocode();
         this.getAlerts();
     }
 
     getGeocode(){
         let endpoint = this.geoEndpoint + this.lat + ',' + this.lng
-        console.log(endpoint)
         this.wuService.getGeoLocation(endpoint)
         .subscribe(
             geocodeInfo => {
@@ -83,6 +81,7 @@ export class HomePageComponent {
               console.log(this.errorMessage)
             }
         );
+
     }
 
     getAlerts(){

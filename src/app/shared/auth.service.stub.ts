@@ -3,7 +3,7 @@ import {UserInfo} from "app/shared/user-info";
 
 export class AuthServiceStub {
 
-    constructor(private loggedin: boolean) {
+constructor(private loggedin: boolean) {
     }
 
     login(email: string, password: string) {

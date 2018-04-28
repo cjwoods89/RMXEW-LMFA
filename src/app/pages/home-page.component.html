@@ -26,17 +26,250 @@
         </div>
     </div>
 
-
     <div class="col-lg-4">
         <div id="alerts-container">
             <ul id="weather-alerts">
 
                 <div *ngFor="let alert of alertsArray">
 
-                    <li>
+                    <li data-alert-type="HUR" *ngIf="alert.type == 'HUR'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-file"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="TOR" *ngIf="alert.type == 'TOR'">
+
+                        <div class="icon background-yellow">
+                            <i class="weather-icon fas fa-fire"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="TOW" *ngIf="alert.type == 'TOW'">
 
                         <div class="icon background-red">
                             <i class="weather-icon fas fa-fire"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="WRN" *ngIf="alert.type == 'WRN'">
+
+                        <div class="icon background-yellow">
+                            <i class="weather-icon fas fa-bolt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="SEW" *ngIf="alert.type == 'SEW'">
+
+                        <div class="icon background-blue">
+                            <i class="weather-icon fas fa-bolt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="WIN" *ngIf="alert.type == 'WIN'">
+
+                        <div class="icon background-blue">
+                            <i class="weather-icon fas fa-snowflake"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="FLO" *ngIf="alert.type == 'FLO'">
+
+                        <div class="icon background-yellow">
+                            <i class="weather-icon fas fa-umbrella"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="WAT" *ngIf="alert.type == 'WAT'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-file-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="WND" *ngIf="alert.type == 'WND'">
+
+                        <div class="icon background-blue">
+                            <i class="weather-icon fas fa-cloudversify"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="SVR" *ngIf="alert.type == 'SVR'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-file-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="HEA" *ngIf="alert.type == 'HEA'">
+
+                        <div class="icon background-red">
+                            <i class="weather-icon fas fa-sun"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="FOG" *ngIf="alert.type == 'FOG'">
+
+                        <div class="icon background-red">
+                            <i class="weather-icon fas fa-fire"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="SPE" *ngIf="alert.type == 'SPE'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-file-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="FIR" *ngIf="alert.type == 'FIR'">
+
+                        <div class="icon background-red">
+                            <i class="weather-icon fas fa-hotjar"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="VOL" *ngIf="alert.type == 'VOL'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-file-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="HWW" *ngIf="alert.type == 'HWW'">
+
+                        <div class="icon background-yellow">
+                            <i class="weather-icon fas fa-cloudversify"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="REC" *ngIf="alert.type == 'REC'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-list-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="REP" *ngIf="alert.type == 'REP'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="text-content">
+                            <div class="title">{{alert.description}}</div>
+                            <div class="small-desc">Start: {{alert.date}}</div>
+                            <div class="small-desc">End: {{alert.expires}}</div>
+                        </div>
+
+                    </li>
+
+                    <li data-alert-type="PUB" *ngIf="alert.type == 'PUB'">
+
+                        <div class="icon background-info">
+                            <i class="weather-icon fas alt"></i>
                         </div>
                         <div class="text-content">
                             <div class="title">{{alert.description}}</div>
@@ -51,4 +284,5 @@
             </ul>
         </div>
     </div>
+
 </div>
