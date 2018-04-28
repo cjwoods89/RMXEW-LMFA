@@ -263,6 +263,9 @@ body {
 /* 
     background colors
 */
+.background-white {
+    background-color: #fff;
+}
 .background-red {
     background-color: #E9573F;
 }
