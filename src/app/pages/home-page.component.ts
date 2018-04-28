@@ -17,7 +17,7 @@ export class HomePageComponent {
     // Start Position
     lat: number = 38.0992564;
     lng: number = -96.4897536;
-    zoom: number = 12;
+    zoom: number = 4;
     locationChosen = false;
 
     constructor(private authService: AuthService, private router: Router) {
@@ -41,5 +41,6 @@ export class HomePageComponent {
         this.lat = event.coords.lat;
         this.lng = event.coords.lng;
         this.locationChosen = true;
+        this.zoom = 6;
     }
 }

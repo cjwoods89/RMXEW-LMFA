@@ -1,9 +1,9 @@
 
-<div *ngIf="!(isLoggedIn|async)">
-    <div class="col-md-6">
-        <p>You need to <a (click)="navigateToLogin($event)" href="#">Log In</a> or <a (click)="navigateToRegister($event)" href="#">Register</a></p>
-    </div>
-</div>
+<!--<div *ngIf="!(isLoggedIn|async)">-->
+    <!--<div class="col-md-6">-->
+        <!--<p>You need to <a (click)="navigateToLogin($event)" href="#">Log In</a> or <a (click)="navigateToRegister($event)" href="#">Register</a></p>-->
+    <!--</div>-->
+<!--</div>-->
 
 <!--<div class="container">-->
 
@@ -28,6 +28,7 @@
         [fullscreenControl]=true
         [mapTypeControl]=true
         [scrollwheel]=false
+        (mapClick)="onChoseLocation($event)"
     >
 
     <agm-marker
