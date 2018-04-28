@@ -43,4 +43,8 @@ export class HomePageComponent {
         this.locationChosen = true;
         this.zoom = 6;
     }
+
+    currentUser(): Observable<UserInfo> {
+        return this.authService.currentUser();
+    }
 }
