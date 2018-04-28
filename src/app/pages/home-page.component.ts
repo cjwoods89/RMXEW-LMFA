@@ -14,9 +14,10 @@ export class HomePageComponent {
     userInfo: Observable<UserInfo>;
     isLoggedIn = new BehaviorSubject(false);
 
+    // Start Position
     lat: number = 38.0992564;
     lng: number = -96.4897536;
-    zoom: number = 25;
+    zoom: number = 12;
     locationChosen = false;
 
     constructor(private authService: AuthService, private router: Router) {
