@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Injectable()
 export class WundergroundService {
 
-    private baseUrl: string = 'http://api.wunderground.com/api/';
+    private baseUrl: string = 'https://api.wunderground.com/api/';
     private publicKey: string = '9ee1b04b6d831b5b/';
 
   constructor(private http: Http) { }
