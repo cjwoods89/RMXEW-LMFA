@@ -20,6 +20,8 @@ import {AllInOnePageComponent} from "./pages/all-in-one-page.component";
 import {LoginPageComponent} from "./pages/login-page.component";
 import { LoggedInGuard } from "app/shared/logged-in-guard";
 import { DashboardPageComponent } from './pages/dashboard-page.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 const routes: Routes = [
     { path: 'register', component: RegisterPageComponent },
@@ -52,7 +54,11 @@ const routes: Routes = [
         AngularFireModule.initializeApp(firebaseConfig, "RMXEW"),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDFM1Tj8jpZDUnJOL_Gx46xdi9Z9PfeWiU'
+        }),
+        AgmSnazzyInfoWindowModule
     ],
     providers: [AuthService, LoggedInGuard],
     bootstrap: [AppComponent]

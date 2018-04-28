@@ -14,6 +14,11 @@ export class HomePageComponent {
     userInfo: Observable<UserInfo>;
     isLoggedIn = new BehaviorSubject(false);
 
+    lat: number = 38.0992564;
+    lng: number = -96.4897536;
+    zoom: number = 25;
+    locationChosen = false;
+
     constructor(private authService: AuthService, private router: Router) {
         this.userInfo = authService.userInfo;
         this.userInfo
@@ -29,5 +34,11 @@ export class HomePageComponent {
     navigateToRegister(e) {
         this.router.navigate(['/register']);
         e.preventDefault();
+    }
+
+    onChoseLocation(event){
+        this.lat = event.coords.lat;
+        this.lng = event.coords.lng;
+        this.locationChosen = true;
     }
 }
