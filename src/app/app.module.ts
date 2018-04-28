@@ -22,6 +22,10 @@ import { LoggedInGuard } from "app/shared/logged-in-guard";
 import { DashboardPageComponent } from './pages/dashboard-page.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import {WundergroundService} from "app/shared/wunderground.service";
+import {ReverseGeocoderService} from "app/shared/reverse-geocoder.service";
+
+
 
 const routes: Routes = [
     { path: 'register', component: RegisterPageComponent },
@@ -60,7 +64,7 @@ const routes: Routes = [
         }),
         AgmSnazzyInfoWindowModule
     ],
-    providers: [AuthService, LoggedInGuard],
+    providers: [AuthService, LoggedInGuard, WundergroundService, ReverseGeocoderService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
